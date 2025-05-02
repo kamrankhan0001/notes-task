@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (username, email, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/signup', { username, email, password });
+      const res = await axios.post('https://notes-task-2njq.vercel.app//auth/signup', { username, email, password });
       setUser(res.data.user);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       return res; // Return the entire response for potential handling in components
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://notes-task-2njq.vercel.app/auth/login', { email, password });
       setUser(res.data.user);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       return res; // Return the entire response for potential handling in components
