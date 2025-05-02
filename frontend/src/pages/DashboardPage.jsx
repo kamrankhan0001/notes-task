@@ -20,7 +20,7 @@ const DashboardPage = () => {
     }
 
     try {
-      const res = await axios.get('http://localhost:5000/api/notes', {
+      const res = await axios.get('https://notes-task-2njq.vercel.app/api/notes', {
         headers: { Authorization: `Bearer ${user.token}` },
        
       });
@@ -42,7 +42,7 @@ const DashboardPage = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/notes',
+        'https://notes-task-2njq.vercel.app/api/notes',
         { content: newNote },
         {
           headers: { Authorization: `Bearer ${user.token}` },
@@ -57,7 +57,7 @@ const DashboardPage = () => {
 
   const handleDeleteNote = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${id}`, {
+      await axios.delete(`https://notes-task-2njq.vercel.app/api/notes/${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setNotes((prev) => prev.filter((note) => note._id !== id)); // Filter out deleted note
